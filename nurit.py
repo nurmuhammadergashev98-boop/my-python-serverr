@@ -1,3 +1,4 @@
+from unicodedata import name
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
@@ -29,6 +30,9 @@ def handle_form():
     
     return jsonify({"status": "ok"}), 200
 
-if __name__ == '__main__':
-    print("Server yondi! Mijozlarni kutmoqdaman...")
-    app.run(port=5000)
+if __name__ == "__main__":
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    print(f"Server {port}-portda yondi! Render orqali ulandi...")
+    app.run(host='0.0.0.0', port=port)
+    
