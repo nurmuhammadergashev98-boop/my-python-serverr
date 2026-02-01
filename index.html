@@ -42,7 +42,7 @@
             }
 
             try {
-                const response = await fetch('http://my-python-serverr.onrender.com/send_message', {
+                const response = await fetch('https://my-python-serverr.onrender.com/send_message', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ name, email, message })
@@ -59,4 +59,5 @@
     </script>
 </body>
 </html>
+
 
